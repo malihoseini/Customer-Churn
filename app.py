@@ -122,7 +122,7 @@ elif PaymentMethod == 'Bank transfer (automatic)' :
 elif PaymentMethod == 'Credit card (automatic)' :
     values.append(0); values.append(0); values.append(0); values.append(1)
 
-model = joblib.load('C:/Users/Mojtaba/Desktop/python/streamlit/project2/Customer Churn.joblib')
+model = joblib.load('Customer Churn.joblib')
 def predict():
     row = np.array(values)
     X = pd.DataFrame([row], columns=columns)
@@ -132,3 +132,4 @@ def predict():
     elif prediction == 1 :
         st.success("Customer churn :material/thumb_up:")
 trigger = st.button('predict', on_click=predict)
+
